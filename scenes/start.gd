@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const building_test = preload("res://buildings/building_test.tscn")
+const main = preload("res://scenes/main.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +8,7 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene_to(building_test)
+	get_tree().change_scene_to(main)
 
 
 func _on_Exit_pressed():

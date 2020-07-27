@@ -9,25 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Building",
+"language": "GDScript",
+"path": "res://buildings/building.gd"
+}, {
 "base": "Area2D",
 "class": "Room",
 "language": "GDScript",
 "path": "res://rooms/room.gd"
 } ]
 _global_script_class_icons={
+"Building": "",
 "Room": ""
 }
 
 [application]
 
 config/name="Settlement Game"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/start.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1600
+window/size/height=900
 
 [input]
 

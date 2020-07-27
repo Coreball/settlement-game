@@ -1,7 +1,11 @@
+class_name Building
 extends Node2D
 
 const RoomSM = preload("res://rooms/room_sm.tscn")
 const RoomMD = preload("res://rooms/room_md.tscn")
+
+const TILE_SIZE = 64
+# const FOOTPRINT = TILE_SIZE * 12
 
 var rooms: Array = []
 
@@ -10,14 +14,14 @@ var rooms: Array = []
 func _ready():
 	var json_rooms = json_result("res://buildings/building_a.json")
 	for json_room in json_rooms:
-		var new_room = make_room(json_room)
+		var new_room: Room = make_room(json_room)
 		add_child(new_room)
 		rooms.append(new_room)
 
 
 # The JSON result from parsing file at [path]
 func json_result(path: String):
-	var file = File.new()
+	var file: File = File.new()
 	file.open(path, file.READ)
 	var json = JSON.parse(file.get_as_text())
 	file.close()
@@ -25,6 +29,7 @@ func json_result(path: String):
 		return json.result
 	else:
 		print(json.error_string)
+		return null
 
 
 # Creates a new room using [room_info]
@@ -36,6 +41,6 @@ func make_room(room_info: Dictionary) -> Room:
 		"md":
 			new_room = RoomMD.instance()
 	new_room.rotation_degrees = room_info["rotation"]
-	new_room.position = Vector2(room_info["x"], room_info["y"])
+	new_room.position = Vector2(room_info["x"], room_info["y"]) * TILE_SIZE
 	return new_room
 
