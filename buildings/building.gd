@@ -7,16 +7,18 @@ const RoomMD = preload("res://rooms/room_md.tscn")
 const TILE_SIZE = 64
 # const FOOTPRINT = TILE_SIZE * 12
 
+var templates: Array = []
+
 var rooms: Array = []
+
+
+func _init():
+	templates = json_result("res://buildings/building_templates.json")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var json_rooms = json_result("res://buildings/building_a.json")
-	for json_room in json_rooms:
-		var new_room: Room = make_room(json_room)
-		add_child(new_room)
-		rooms.append(new_room)
+	pass
 
 
 # The JSON result from parsing file at [path]
@@ -30,6 +32,23 @@ func json_result(path: String):
 	else:
 		print(json.error_string)
 		return null
+
+
+# Set the rooms of this building to a random template
+func use_random_template() -> void:
+	var random_index: int = randi() % templates.size()
+	use_template(random_index)
+
+
+# Set the rooms of this building to those from [template_index]
+func use_template(template_index: int) -> void:
+	# Might want to clear the children/rooms later
+	var building_template: Dictionary = templates[template_index]
+	print(building_template)
+	for room_template in building_template["rooms"]:
+		var new_room: Room = make_room(room_template)
+		add_child(new_room)
+		rooms.append(new_room)
 
 
 # Creates a new room using [room_info]

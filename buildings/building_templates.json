@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Building A",
+    "rooms": [
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": -6,
+        "y": -6
+      },
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": -2,
+        "y": -6
+      },
+      {
+        "size": "sm",
+        "rotation": 0,
+        "x": -2,
+        "y": -3
+      },
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": 2,
+        "y": 3
+      }
+    ]
+  },
+  {
+    "name": "Building B",
+    "rooms": [
+      {
+        "size": "md",
+        "rotation": 90,
+        "x": 0,
+        "y": -4
+      },
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": -4,
+        "y": 0
+      },
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": 0,
+        "y": 1
+      },
+      {
+        "size": "sm",
+        "rotation": 0,
+        "x": 0,
+        "y": -3
+      },
+      {
+        "size": "sm",
+        "rotation": 0,
+        "x": 0,
+        "y": -1
+      }
+    ]
+  },
+  {
+    "name": "Building C",
+    "rooms": [
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": -5,
+        "y": -5
+      },
+      {
+        "size": "md",
+        "rotation": 0,
+        "x": -5,
+        "y": -2
+      },
+      {
+        "size": "md",
+        "rotation": 90,
+        "x": -1,
+        "y": 1
+      },
+      {
+        "size": "md",
+        "rotation": 90,
+        "x": 2,
+        "y": 0
+      },
+      {
+        "size": "md",
+        "rotation": 90,
+        "x": 2,
+        "y": -4
+      },
+      {
+        "size": "sm",
+        "rotation": 0,
+        "x": 2,
+        "y": -4
+      }
+    ]
+  }
+]
