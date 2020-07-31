@@ -1,8 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Popup" type="PopupPanel"]
+[ext_resource path="res://ui/room_detail.gd" type="Script" id=1]
+
+[node name="RoomPopup" type="PopupPanel"]
 margin_right = 276.0
 margin_bottom = 152.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,13 +34,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="TestBed" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_right = 168.0
 margin_bottom = 20.0
 text = "Hello Worldddeeeedddd"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="TestEmpty" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 24.0
 margin_right = 168.0
 margin_bottom = 44.0
 text = "Woooo"
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TestBed" to="." method="_on_TestBed_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TestEmpty" to="." method="_on_TestEmpty_pressed"]

@@ -44,3 +44,8 @@ func make_room(room_info: Dictionary) -> Room:
 	new_room.position = Vector2(room_info["x"], room_info["y"]) * TILE_SIZE
 	return new_room
 
+
+# Connect all rooms in building to RoomDetail popup
+func connect_room_edit(popup: RoomDetail):
+	for room in rooms:
+		room.connect("edit_room", popup, "_on_Room_edit_room")

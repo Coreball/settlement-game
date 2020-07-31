@@ -1,6 +1,8 @@
 class_name Room
 extends Area2D
 
+signal edit_room(Room)
+
 
 func _init():
 	print("room init")
@@ -14,5 +16,5 @@ func _ready():
 
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):
-		print("hello")
-		$Popup.popup_centered()
+		print("Pressed room")
+		emit_signal("edit_room", self)

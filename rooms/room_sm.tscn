@@ -9,6 +9,9 @@ extents = Vector2( 96, 64 )
 [node name="Room" type="Area2D"]
 script = ExtResource( 2 )
 
+[node name="Module" type="Sprite" parent="."]
+position = Vector2( 96, 64 )
+
 [node name="Border" type="Sprite" parent="."]
 position = Vector2( 96, 64 )
 texture = ExtResource( 1 )

@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Room",
 "language": "GDScript",
 "path": "res://rooms/room.gd"
+}, {
+"base": "PopupPanel",
+"class": "RoomDetail",
+"language": "GDScript",
+"path": "res://ui/room_detail.gd"
 } ]
 _global_script_class_icons={
 "Building": "",
-"Room": ""
+"Room": "",
+"RoomDetail": ""
 }
 
 [application]
