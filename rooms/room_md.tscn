@@ -8,6 +8,7 @@ extents = Vector2( 128, 96 )
 
 [node name="Room" type="Area2D"]
 script = ExtResource( 2 )
+room_size = 1
 
 [node name="Module" type="Sprite" parent="."]
 position = Vector2( 128, 96 )

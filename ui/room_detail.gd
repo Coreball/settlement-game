@@ -21,7 +21,11 @@ func _on_Room_edit_room(room: Room):
 
 func _on_TestBed_pressed():
 	if selected_room != null:
-		selected_room.get_node("Module").texture = BED_MD
+		match selected_room.room_size:
+			Room.RoomSize.SM:
+				selected_room.get_node("Module").texture = BED_SM
+			Room.RoomSize.MD:
+				selected_room.get_node("Module").texture = BED_MD
 
 
 func _on_TestEmpty_pressed():

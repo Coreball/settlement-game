@@ -8,12 +8,29 @@ script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-margin_right = 49.0
-margin_bottom = 14.0
-text = "aaaaaaa"
+[node name="RoomPopup" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="EndTurnButton" type="Button" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -20.0
+text = "End Turn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RoomPopup" parent="CanvasLayer" instance=ExtResource( 2 )]
+[node name="InfoVBox" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayLabel" type="Label" parent="CanvasLayer/InfoVBox"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Day 0"
+[connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_EndTurnButton_pressed"]

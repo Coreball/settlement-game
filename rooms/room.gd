@@ -3,6 +3,9 @@ extends Area2D
 
 signal edit_room(Room)
 
+enum RoomSize {SM, MD}
+export(RoomSize) var room_size
+
 
 func _init():
 	print("room init")
