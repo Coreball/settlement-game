@@ -13,25 +13,12 @@ var rooms: Array = []
 
 
 func _init():
-	building_templates = json_result("res://buildings/building_templates.json")
+	building_templates = Util.json_result("res://buildings/building_templates.json")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
-
-# The JSON result from parsing file at [path]
-func json_result(path: String):
-	var file: File = File.new()
-	file.open(path, file.READ)
-	var json = JSON.parse(file.get_as_text())
-	file.close()
-	if json.error == OK:
-		return json.result
-	else:
-		print(json.error_string)
-		return null
 
 
 # Set the rooms of this building to a random template

@@ -15,9 +15,19 @@ _global_script_classes=[ {
 "path": "res://buildings/building.gd"
 }, {
 "base": "Reference",
+"class": "Module",
+"language": "GDScript",
+"path": "res://modules/module.gd"
+}, {
+"base": "Reference",
 "class": "ModuleTextures",
 "language": "GDScript",
 "path": "res://modules/module_textures.gd"
+}, {
+"base": "Reference",
+"class": "ModuleType",
+"language": "GDScript",
+"path": "res://modules/module_type.gd"
 }, {
 "base": "Area2D",
 "class": "Room",
@@ -28,12 +38,20 @@ _global_script_classes=[ {
 "class": "RoomDetail",
 "language": "GDScript",
 "path": "res://ui/room_detail.gd"
+}, {
+"base": "Reference",
+"class": "Util",
+"language": "GDScript",
+"path": "res://util.gd"
 } ]
 _global_script_class_icons={
 "Building": "",
+"Module": "",
 "ModuleTextures": "",
+"ModuleType": "",
 "Room": "",
-"RoomDetail": ""
+"RoomDetail": "",
+"Util": ""
 }
 
 [application]
@@ -41,6 +59,10 @@ _global_script_class_icons={
 config/name="Settlement Game"
 run/main_scene="res://scenes/start.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ModuleProperties="*res://modules/module_properties.gd"
 
 [debug]
 

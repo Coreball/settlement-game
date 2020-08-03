@@ -1,0 +1,15 @@
+[
+  {
+    "name": "bed",
+    "sizes": {
+      "sm": {
+        "texture": "res://modules/bed_sm.png",
+        "max residents": 1
+      },
+      "md": {
+        "texture": "res://modules/bed_md.png",
+        "max residents": 2
+      }
+    }
+  }
+]

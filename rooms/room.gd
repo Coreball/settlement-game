@@ -5,7 +5,7 @@ signal edit_room(Room)
 
 enum RoomSize {SM, MD}
 export(RoomSize) var room_size
-var module: String = ""
+var module_name: String = ""
 
 onready var module_sprite: Sprite = $Module as Sprite
 
@@ -28,11 +28,11 @@ func _input_event(viewport, event, shape_idx):
 
 # Change the module of the room to [module_name]
 func change_module(module_name: String) -> void:
-	module = module_name
-	module_sprite.texture = ModuleTextures.TEXTURES[module][room_size]
+	self.module_name = module_name
+	module_sprite.texture = ModuleProperties.type(module_name).size(room_size).texture
 
 
 # Clear the current module in the room
 func clear_module() -> void:
-	module = ""
+	module_name = ""
 	module_sprite.texture = null
