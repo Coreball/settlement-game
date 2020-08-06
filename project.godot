@@ -14,21 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://buildings/building.gd"
 }, {
-"base": "Reference",
-"class": "Module",
-"language": "GDScript",
-"path": "res://modules/module.gd"
-}, {
-"base": "Reference",
-"class": "ModuleTextures",
-"language": "GDScript",
-"path": "res://modules/module_textures.gd"
-}, {
-"base": "Reference",
-"class": "ModuleType",
-"language": "GDScript",
-"path": "res://modules/module_type.gd"
-}, {
 "base": "Area2D",
 "class": "Room",
 "language": "GDScript",
@@ -46,9 +31,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Building": "",
-"Module": "",
-"ModuleTextures": "",
-"ModuleType": "",
 "Room": "",
 "RoomDetail": "",
 "Util": ""
