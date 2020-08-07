@@ -8,5 +8,13 @@
       "texture": "res://modules/bed_md.png",
       "max residents": 2
     }
+  },
+  "rain": {
+    "sm": {
+      "texture": "res://modules/rain_sm.png"
+    },
+    "md": {
+      "texture": "res://modules/rain_md.png"
+    }
   }
 }

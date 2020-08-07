@@ -21,6 +21,11 @@ func _on_TestBed_pressed():
 		selected_room.change_module("bed")
 
 
+func _on_TestRain_pressed():
+	if selected_room != null:
+		selected_room.change_module("rain")
+
+
 func _on_TestEmpty_pressed():
 	if selected_room != null:
 		selected_room.clear_module()

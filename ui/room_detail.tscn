@@ -39,10 +39,16 @@ margin_right = 168.0
 margin_bottom = 20.0
 text = "Hello Worldddeeeedddd"
 
+[node name="TestRain" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_right = 168.0
+margin_bottom = 20.0
+text = "RAIN"
+
 [node name="TestEmpty" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 24.0
 margin_right = 168.0
 margin_bottom = 44.0
 text = "Woooo"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TestBed" to="." method="_on_TestBed_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TestRain" to="." method="_on_TestRain_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TestEmpty" to="." method="_on_TestEmpty_pressed"]
