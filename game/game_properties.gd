@@ -8,4 +8,4 @@ func _init():
 
 
 func get_initial_resources() -> Dictionary:
-	return properties["initial resources"]
+	return properties["initial resources"].duplicate()

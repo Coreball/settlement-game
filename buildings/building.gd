@@ -55,3 +55,8 @@ func make_room(room_info: Dictionary) -> Room:
 func connect_room_edit(popup: RoomDetail) -> void:
 	for room in rooms:
 		room.connect("edit_room", popup, "_on_Room_edit_room")
+
+
+func step(resources: Dictionary) -> void:
+	for room in rooms:
+		room.production(resources)

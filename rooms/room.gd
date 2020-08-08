@@ -29,10 +29,19 @@ func _input_event(viewport, event, shape_idx):
 # Change the module of the room to [module_name]
 func change_module(module_name: String) -> void:
 	module = module_name
-	module_sprite.texture = ModuleProperties.get_module_texture(module_name, room_size)
+	module_sprite.texture = ModuleProperties.get_module_texture(module, room_size)
 
 
 # Clear the current module in the room
 func clear_module() -> void:
 	module = ""
 	module_sprite.texture = null
+
+
+# Produce according to ModuleProperties and modify [resources] in place
+func production(resources: Dictionary) -> void:
+	if module.empty():
+		return
+	var productions = ModuleProperties.get_productions(module, room_size)
+	for resource in productions:
+		resources[resource] += productions[resource]

@@ -2,19 +2,29 @@
   "bed": {
     "sm": {
       "texture": "res://modules/bed_sm.png",
-      "max residents": 1
+      "max residents": 1,
+      "production": {}
     },
     "md": {
       "texture": "res://modules/bed_md.png",
-      "max residents": 2
+      "max residents": 2,
+      "production": {}
     }
   },
   "rain": {
     "sm": {
-      "texture": "res://modules/rain_sm.png"
+      "texture": "res://modules/rain_sm.png",
+      "max residents": 0,
+      "production": {
+        "water": 3
+      }
     },
     "md": {
-      "texture": "res://modules/rain_md.png"
+      "texture": "res://modules/rain_md.png",
+      "max residents": 0,
+      "production": {
+        "water": 6
+      }
     }
   }
 }

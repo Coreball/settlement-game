@@ -16,7 +16,7 @@ func _init():
 	randomize()
 	building = BuildingScene.instance()
 	building.use_random_template()
-	resources = GameProperties.get_initial_resources().duplicate()
+	resources = GameProperties.get_initial_resources()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ func _ready():
 	add_child(building)
 	building.get_node("Camera2D").make_current() # Centered camera
 	building.connect_room_edit(room_popup)
-	for resource in resources:
+	for resource in resources: # Make resource labels
 		var resource_label: Label = Label.new()
 		resource_labels[resource] = resource_label
 		info_vbox.add_child(resource_label)
@@ -39,10 +39,11 @@ func update_resources() -> void:
 		resource_label.text = "%s: %d" % [resource.capitalize(), amount]
 
 
+# Advance the turn/step
 func next_turn() -> void:
 	days += 1
 	day_label.text = "Day %d" % days
-	resources["water"] += 10
+	building.step(resources)
 	update_resources()
 
 
