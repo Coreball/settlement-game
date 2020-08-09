@@ -1,5 +1,6 @@
 {
   "initial resources": {
+    "food": 50,
     "water": 50,
     "scrap wood": 100
   }

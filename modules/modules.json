@@ -38,5 +38,18 @@
         "water": 6
       }
     }
+  },
+  "farm": {
+    "md": {
+      "texture": "res//modules/farm_md.png",
+      "max residents": 0,
+      "cost": {
+        "scrap wood": 10,
+        "water": 20
+      },
+      "production": {
+        "food": 4
+      }
+    }
   }
 }
