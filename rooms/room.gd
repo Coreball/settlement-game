@@ -1,7 +1,7 @@
 class_name Room
 extends Area2D
 
-signal edit_room(Room)
+signal edit_room(room)
 
 enum RoomSize {SM, MD}
 export(RoomSize) var room_size

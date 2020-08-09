@@ -3,11 +3,17 @@
     "sm": {
       "texture": "res://modules/bed_sm.png",
       "max residents": 1,
+      "cost": {
+        "scrap wood": 20
+      },
       "production": {}
     },
     "md": {
       "texture": "res://modules/bed_md.png",
       "max residents": 2,
+      "cost": {
+        "scrap wood": 40
+      },
       "production": {}
     }
   },
@@ -15,6 +21,9 @@
     "sm": {
       "texture": "res://modules/rain_sm.png",
       "max residents": 0,
+      "cost": {
+        "scrap wood": 30
+      },
       "production": {
         "water": 3
       }
@@ -22,6 +31,9 @@
     "md": {
       "texture": "res://modules/rain_md.png",
       "max residents": 0,
+      "cost": {
+        "scrap wood": 60
+      },
       "production": {
         "water": 6
       }

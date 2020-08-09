@@ -24,6 +24,7 @@ func _ready():
 	add_child(building)
 	building.get_node("Camera2D").make_current() # Centered camera
 	building.connect_room_edit(room_popup)
+	room_popup.connect("change_module", self, "_on_RoomPopup_change_module")
 	for resource in resources: # Make resource labels
 		var resource_label: Label = Label.new()
 		resource_labels[resource] = resource_label
@@ -45,6 +46,26 @@ func next_turn() -> void:
 	day_label.text = "Day %d" % days
 	building.step(resources)
 	update_resources()
+
+
+# Change module of [room] to [module]
+func _on_RoomPopup_change_module(room: Room, module: String) -> void:
+	if module == "": # For clearing, empty module
+		room.clear_module()
+		return
+	# Otherwise get the costs
+	var costs: Dictionary = ModuleProperties.get_costs(module, room.room_size)
+	var can_build = true
+	# Check that module is affordable
+	for resource in costs:
+		if resources[resource] < costs[resource]:
+			can_build = false
+	# And build if able, updating resource labels too
+	if can_build:
+		for resource in costs:
+			resources[resource] -= costs[resource]
+		room.change_module(module)
+		update_resources()
 
 
 func _on_EndTurnButton_pressed():

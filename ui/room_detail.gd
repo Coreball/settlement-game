@@ -2,6 +2,8 @@
 class_name RoomDetail
 extends PopupPanel
 
+signal change_module(room, module)
+
 var selected_room: Room
 
 
@@ -18,14 +20,14 @@ func _on_Room_edit_room(room: Room):
 
 func _on_TestBed_pressed():
 	if selected_room != null:
-		selected_room.change_module("bed")
+		emit_signal("change_module", selected_room, "bed")
 
 
 func _on_TestRain_pressed():
 	if selected_room != null:
-		selected_room.change_module("rain")
+		emit_signal("change_module", selected_room, "rain")
 
 
 func _on_TestEmpty_pressed():
 	if selected_room != null:
-		selected_room.clear_module()
+		emit_signal("change_module", selected_room, "")

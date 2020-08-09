@@ -58,3 +58,8 @@ func get_max_residents(module: String, size: int) -> int:
 # The production dictionary for [module] of [size]
 func get_productions(module: String, size: int) -> Dictionary:
 	return _property(module, size, "production")
+
+
+# The resource costs for making a [module] of [size]
+func get_costs(module: String, size: int) -> Dictionary:
+	return _property(module, size, "cost")
