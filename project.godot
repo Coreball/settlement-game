@@ -46,6 +46,7 @@ config/icon="res://icon.png"
 
 ModuleProperties="*res://modules/module_properties.gd"
 GameProperties="*res://game/game_properties.gd"
+Logger="*res://game/logger.gd"
 
 [debug]
 

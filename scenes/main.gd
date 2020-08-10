@@ -7,6 +7,7 @@ var building: Building
 var resources: Dictionary
 var resource_labels: Dictionary
 
+onready var log_label: RichTextLabel = $CanvasLayer/BottomPanel/HBoxContainer/LogLabel
 onready var day_label: Label = $CanvasLayer/InfoVBox/DayLabel
 onready var info_vbox: VBoxContainer = $CanvasLayer/InfoVBox
 onready var room_popup: RoomDetail = $CanvasLayer/RoomPopup
@@ -21,6 +22,7 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Logger.connect("new_log", self, "_on_Logger_new_log")
 	add_child(building)
 	building.get_node("Camera2D").make_current() # Centered camera
 	building.connect_room_edit(room_popup)
@@ -48,6 +50,11 @@ func next_turn() -> void:
 	update_resources()
 
 
+func _on_Logger_new_log(words: String) -> void:
+	log_label.newline()
+	log_label.add_text(words)
+
+
 # Change module of [room] to [module]
 func _on_RoomPopup_change_module(room: Room, module: String) -> void:
 	if module == "": # For clearing, empty module
@@ -62,6 +69,7 @@ func _on_RoomPopup_change_module(room: Room, module: String) -> void:
 			can_build = false
 	# And build if able, updating resource labels too
 	if can_build:
+		Logger.write("Building a %s module" % module)
 		for resource in costs:
 			resources[resource] -= costs[resource]
 		room.change_module(module)
