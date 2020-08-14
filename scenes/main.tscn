@@ -17,30 +17,59 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DayLabel" type="Label" parent="CanvasLayer/InfoVBox"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Day 0"
-
-[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer"]
-anchor_left = 0.2
-anchor_top = 1.0
-anchor_right = 0.8
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -63.9999
-margin_bottom = 6.10352e-05
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
+[node name="TopPanel" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+margin_left = 696.0
+margin_right = 903.0
+margin_bottom = 28.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/TopPanel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 953.0
+margin_right = 200.0
+margin_bottom = 21.0
+custom_constants/separation = 20
+
+[node name="DayLabel" type="Label" parent="CanvasLayer/VBoxContainer/TopPanel/HBoxContainer"]
+margin_right = 36.0
+margin_bottom = 14.0
+text = "Day 0"
+
+[node name="SettlementNameLabel" type="Label" parent="CanvasLayer/VBoxContainer/TopPanel/HBoxContainer"]
+margin_left = 56.0
+margin_right = 193.0
+margin_bottom = 14.0
+text = "Unnamed Settlement"
+
+[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+margin_top = 836.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 0, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1593.0
 margin_bottom = 57.0
 
-[node name="LogLabel" type="RichTextLabel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
-margin_right = 842.0
+[node name="LogLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/BottomPanel/HBoxContainer"]
+margin_right = 1482.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 text = "aaaaaaaaaaa
@@ -51,13 +80,13 @@ eeeeeeeeeee
 fffffffffffffffff"
 scroll_following = true
 
-[node name="EndTurnButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer"]
-margin_left = 846.0
-margin_right = 946.0
+[node name="EndTurnButton" type="Button" parent="CanvasLayer/VBoxContainer/BottomPanel/HBoxContainer"]
+margin_left = 1486.0
+margin_right = 1586.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 0 )
 text = "End Turn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="CanvasLayer/BottomPanel/HBoxContainer/EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomPanel/HBoxContainer/EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
